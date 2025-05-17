@@ -14,7 +14,6 @@ def proxy(path):
     
     headers = {key: value for key, value in request.headers if key != 'Host'}
     data = request.get_data() if request.method in ['POST', 'PUT', 'PATCH'] else None
-    
     try:
         if request.method == "GET":
             response = requests.get(url, headers=headers, params=request.args)
